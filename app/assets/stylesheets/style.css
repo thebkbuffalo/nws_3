@@ -1,0 +1,25 @@
+body {
+  padding-top: 10em;
+}
+
+.inline {
+  display: inline-block;
+}
+
+nav {
+  border-bottom: 1px solid black!important;
+}
+
+nav img {
+  width: 15%;
+  margin: 5px 0 5px 10px;
+}
+
+a:hover {
+  text-decoration: none!important;
+  background: none!important;
+}
+
+.nav_links  {
+  padding-top: 25px;
+}
