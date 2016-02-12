@@ -55,12 +55,13 @@ a:hover {
 }
 
 .menu_inner a:hover {
-  
+
   color: black;
 }
 
 .menu_ul h1 {
   display: inline-block;
   vertical-align: top;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
+  margin-top: .8em;
 }
