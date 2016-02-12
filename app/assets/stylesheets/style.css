@@ -1,6 +1,7 @@
 body {
   padding-top: 13em;
   padding-bottom: 5em;
+  background-color: #CBDBEF!important;
 }
 
 .inline {
@@ -43,6 +44,19 @@ a:hover {
   background-color: #424242;
   border: 1px solid black;
   margin-right: 1.3em;
+}
+
+.menu {
+  margin-left: 7.5em;
+}
+
+.menu_inner a {
+  color: black;
+}
+
+.menu_inner a:hover {
+  
+  color: black;
 }
 
 .menu_ul h1 {

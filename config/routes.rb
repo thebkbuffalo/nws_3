@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  get '/well_pumps' => 'well_pumps#index'
+  namespace :well_pumps do
+
+  end
+
   resources :blogs, path: 'blog'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
