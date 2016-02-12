@@ -1,17 +1,24 @@
 body {
-  padding-top: 10em;
+  padding-top: 13em;
+  padding-bottom: 5em;
 }
 
 .inline {
   display: inline-block;
 }
 
+ul {
+  list-style-type: none;
+}
+
 nav {
   border-bottom: 1px solid black!important;
+  height: 10em;
+  background: url('nav_bg.jpg') no-repeat 48%;
 }
 
 nav img {
-  width: 15%;
+  width: 20%;
   margin: 5px 0 5px 10px;
 }
 
@@ -21,5 +28,25 @@ a:hover {
 }
 
 .nav_links  {
-  padding-top: 25px;
+  padding-top: 2.5em;
+  font-size: 1.5em;
+}
+
+.nav_links a {
+  color: black;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: #424242;
+  border: 1px solid black;
+  margin-right: 1.3em;
+}
+
+.menu_ul h1 {
+  display: inline-block;
+  vertical-align: top;
+  padding-bottom: 2em;
 }
