@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :water_testing_services
   root 'welcome#index'
 
+  resources :water_testing_services
   resources :flood_preventions, path: "flood_prevention"
+
+  get 'water_pressure' => 'water_pressure#index'
+
+  # well pumps section
   get '/well_pumps' => 'well_pumps#index'
   namespace :well_pumps do
     get '/constant_pressure_systems' => 'constant_pressure_systems#index'
