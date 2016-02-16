@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :flood_preventions, path: "flood_prevention"
 
   get 'water_pressure' => 'water_pressure#index'
+  get 'pressure_tanks_controls' => 'pressure_tanks_controls#index'
+
+  # water treatment and purification section
+  get '/water_treatments' => 'water_treatments#index'
 
   # well pumps section
   get '/well_pumps' => 'well_pumps#index'
