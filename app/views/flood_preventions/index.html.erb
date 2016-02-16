@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Flood Preventions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flood_preventions.each do |flood_prevention| %>
+      <tr>
+        <td><%= link_to 'Show', flood_prevention %></td>
+        <td><%= link_to 'Edit', edit_flood_prevention_path(flood_prevention) %></td>
+        <td><%= link_to 'Destroy', flood_prevention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flood prevention', new_flood_prevention_path %>

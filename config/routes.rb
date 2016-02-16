@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  resources :flood_preventions, path: "flood_prevention"
   get '/well_pumps' => 'well_pumps#index'
   namespace :well_pumps do
-
+    get '/constant_pressure_systems' => 'constant_pressure_systems#index'
   end
 
   resources :blogs, path: 'blog'
