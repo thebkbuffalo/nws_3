@@ -1,0 +1,17 @@
+<%= form_for(@water_testing_service) do |f| %>
+  <% if @water_testing_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@water_testing_service.errors.count, "error") %> prohibited this water_testing_service from being saved:</h2>
+
+      <ul>
+      <% @water_testing_service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

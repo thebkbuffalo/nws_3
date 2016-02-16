@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :water_testing_services
   root 'welcome#index'
 
   resources :flood_preventions, path: "flood_prevention"
