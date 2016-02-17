@@ -51,6 +51,9 @@ Rails.application.routes.draw do
     resources :jetpumps
     resources :boosterpumps
     resources :pressuretanks
+    resources :newservicelines
+    resources :customrepairs
+    resources :emergencyservices
   end
 
   resources :blogs, path: 'blog'

@@ -1,0 +1,2 @@
+module WellPumps::EmergencyservicesHelper
+end
