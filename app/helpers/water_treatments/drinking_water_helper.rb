@@ -1,0 +1,2 @@
+module WaterTreatments::DrinkingWaterHelper
+end
