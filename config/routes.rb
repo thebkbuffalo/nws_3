@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     get '/constant_pressure_systems' => 'constant_pressure_systems#index'
     resources :jetpumps
     resources :boosterpumps
+    resources :pressuretanks
   end
 
   resources :blogs, path: 'blog'
