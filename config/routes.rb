@@ -29,6 +29,11 @@ Rails.application.routes.draw do
       namespace :office do
         get '/water_coolers' => 'water_coolers#index'
         get '/kitchen' => 'kitchen#index'
+        namespace :kitchen do
+          resources :undersink_ro
+          resources :basement_ro
+          resources :wholehouse_ro
+        end
       end
     end
   end
