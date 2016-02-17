@@ -23,6 +23,14 @@ Rails.application.routes.draw do
         end
       end
     end
+    namespace :commercial do
+      get '/govt_food' => 'govt_food#index'
+      get '/office' => 'office#index'
+      namespace :office do
+        get '/water_coolers' => 'water_coolers#index'
+        get '/kitchen' => 'kitchen#index'
+      end
+    end
   end
 
   # well pumps section
