@@ -1,0 +1,2 @@
+module WellPumps::JetpumpsHelper
+end

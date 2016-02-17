@@ -1,0 +1,2 @@
+module WellPumps::BoosterpumpsHelper
+end

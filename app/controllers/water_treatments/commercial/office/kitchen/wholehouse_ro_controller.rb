@@ -10,6 +10,9 @@ class WaterTreatments::Commercial::Office::Kitchen::WholehouseRoController < App
   def new
   end
 
+  def create
+  end
+
   def edit
   end
 

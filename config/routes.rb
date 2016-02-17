@@ -48,6 +48,8 @@ Rails.application.routes.draw do
   get '/well_pumps' => 'well_pumps#index'
   namespace :well_pumps do
     get '/constant_pressure_systems' => 'constant_pressure_systems#index'
+    resources :jetpumps
+    resources :boosterpumps
   end
 
   resources :blogs, path: 'blog'
