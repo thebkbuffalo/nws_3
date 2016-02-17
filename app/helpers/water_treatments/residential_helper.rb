@@ -1,0 +1,2 @@
+module WaterTreatments::ResidentialHelper
+end

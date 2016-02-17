@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   # water treatment and purification section
   get '/water_treatments' => 'water_treatments#index'
+  namespace :water_treatments do
+    get '/commercial' => 'commercial#index'
+    get '/residential' => 'residential#index'
+  end
 
   # well pumps section
   get '/well_pumps' => 'well_pumps#index'
