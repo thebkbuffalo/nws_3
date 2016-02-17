@@ -6,12 +6,19 @@ Rails.application.routes.draw do
 
   get 'water_pressure' => 'water_pressure#index'
   get 'pressure_tanks_controls' => 'pressure_tanks_controls#index'
+  get 'contact' => 'contact#index'
 
   # water treatment and purification section
   get '/water_treatments' => 'water_treatments#index'
   namespace :water_treatments do
     get '/commercial' => 'commercial#index'
     get '/residential' => 'residential#index'
+    namespace :residential do
+      get '/new_equipment' => 'new_equipment#index'
+      namespace :new_equipment do
+        get '/water_test' => 'water_test#index'
+      end
+    end
   end
 
   # well pumps section
