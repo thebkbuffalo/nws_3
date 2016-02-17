@@ -17,6 +17,9 @@ Rails.application.routes.draw do
       get '/new_equipment' => 'new_equipment#index'
       namespace :new_equipment do
         get '/water_test' => 'water_test#index'
+        namespace :water_test do
+          get '/i_want' => 'i_want#index'
+        end
       end
     end
   end
