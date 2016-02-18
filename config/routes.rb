@@ -54,6 +54,12 @@ Rails.application.routes.draw do
       get '/franklin' => 'franklin#index'
       get '/other' => 'other#index'
     end
+    get 'pump_installation_services' => 'pump_installation_services#index'
+    namespace :pump_installation_services do
+      get '/residential' => 'residential#index'
+      get '/emergency_service' => 'emergency_service#index'
+      get '/commercial' => 'commercial#index'
+    end
     resources :conventional_well_pumps
     resources :jetpumps
     resources :boosterpumps
