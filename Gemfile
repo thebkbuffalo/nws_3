@@ -37,6 +37,8 @@ gem 'pry-rails', '~> 0.3.4'
 
 gem 'rails_12factor', group: :production
 
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 gem 'jquery-turbolinks'
 
 group :development, :test do
