@@ -47,7 +47,10 @@ Rails.application.routes.draw do
   # well pumps section
   get '/well_pumps' => 'well_pumps#index'
   namespace :well_pumps do
-    get '/constant_pressure_systems' => 'constant_pressure_systems#index'
+    resources :constant_pressure_systems
+    namespace :constant_pressure_systems do
+      get '/penteks' => 'penteks#index'
+    end
     resources :jetpumps
     resources :boosterpumps
     resources :pressuretanks
