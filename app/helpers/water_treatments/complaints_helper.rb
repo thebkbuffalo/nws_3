@@ -1,0 +1,2 @@
+module WaterTreatments::ComplaintsHelper
+end

@@ -64,3 +64,16 @@ a:hover {
   padding-bottom: 1em;
   margin-top: .8em;
 }
+
+.complaints {
+  margin: 1em 10em;
+}
+
+.complaint_box {
+  padding: 1em;
+  margin: 1.5em;
+  border: 1px solid black;
+  height: 175px;
+  width: 175px;
+  vertical-align: top;
+}
