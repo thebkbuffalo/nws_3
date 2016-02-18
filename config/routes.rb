@@ -59,6 +59,11 @@ Rails.application.routes.draw do
       get '/residential' => 'residential#index'
       get '/emergency_service' => 'emergency_service#index'
       get '/commercial' => 'commercial#index'
+      namespace :commercial do
+        resources :pumps_tanks_boosters
+        resources :backhoe_services
+        resources :crane_services
+      end
     end
     resources :conventional_well_pumps
     resources :jetpumps
