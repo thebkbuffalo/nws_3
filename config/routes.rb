@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     get '/residential' => 'residential#index'
     get '/drinking_water' => 'drinking_water#index'
     get '/complaints' => 'complaints#index'
+    namespace :complaints do
+      get '/low_water_pressure' => 'low_water_pressure#index'
+    end
     namespace :drinking_water do
       get '/filtration_systems' => 'filtration_systems#index'
       get '/faucet_selections' => 'faucet_selections#index'
