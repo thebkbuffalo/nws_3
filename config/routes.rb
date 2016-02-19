@@ -21,6 +21,11 @@ Rails.application.routes.draw do
       get '/corrosion' => 'corrosion#index'
       get '/hard_water' => 'hard_water#index'
       get '/sediment' => 'sediment#index'
+      get '/radon' => 'radon#index'
+      get '/color_water' => 'color_water#index'
+      get 'lead' => 'lead#index'
+      get 'bacteria' => 'bacteria#index'
+      
     end
     namespace :drinking_water do
       get '/filtration_systems' => 'filtration_systems#index'
