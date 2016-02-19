@@ -25,7 +25,11 @@ Rails.application.routes.draw do
       get '/color_water' => 'color_water#index'
       get 'lead' => 'lead#index'
       get 'bacteria' => 'bacteria#index'
-      
+      get 'chlorine' => 'chlorine#index'
+      get 'nitrates' => 'nitrates#index'
+      get 'bad_taste' => 'bad_taste#index'
+      get 'stinky_water' => 'stinky_water#index'
+      get 'chlorides' => 'chlorides#index'
     end
     namespace :drinking_water do
       get '/filtration_systems' => 'filtration_systems#index'
