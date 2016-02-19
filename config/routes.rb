@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     get '/complaints' => 'complaints#index'
     namespace :complaints do
       get '/low_water_pressure' => 'low_water_pressure#index'
+      get '/brown_water' => 'brown_water#index'
+      get '/corrosion' => 'corrosion#index'
+      get '/hard_water' => 'hard_water#index'
+      get '/sediment' => 'sediment#index'
     end
     namespace :drinking_water do
       get '/filtration_systems' => 'filtration_systems#index'
