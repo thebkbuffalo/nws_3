@@ -31,6 +31,22 @@ Rails.application.routes.draw do
       get 'stinky_water' => 'stinky_water#index'
       get 'chlorides' => 'chlorides#index'
     end
+    namespace :solutions do
+      get 'acid_neutralizer' => 'acid_neutralizer#index'
+      get 'chem_feeder' => 'chem_feeder#index'
+      get 'water_conditioner' => 'water_conditioner#index'
+      get 'iron_sulfur' => 'iron_sulfur#index'
+      get 'birm' => 'birm#index'
+      get 'multimedia' => 'multimedia#index'
+      get 'sediment_control' => 'sediment_control#index'
+      get 'kx_pro' => 'kx_pro#index'
+      get 'ozone' => 'ozone#index'
+      get 'ion_exchange' => 'ion_exchange#index'
+      get 'aeration' => 'aeration#index'
+      get 'ultraviolet' => 'ultraviolet#index'
+      get 'activated_carbon' => 'activated_carbon#index'
+      get 'reverse_osmosis' => 'reverse_osmosis#index'
+    end
     namespace :drinking_water do
       get '/filtration_systems' => 'filtration_systems#index'
       get '/faucet_selections' => 'faucet_selections#index'
