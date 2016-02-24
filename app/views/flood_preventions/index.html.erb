@@ -2,23 +2,13 @@
 
 <h1>Listing Flood Preventions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @flood_preventions.each do |flood_prevention| %>
-      <tr>
-        <td><%= link_to 'Show', flood_prevention %></td>
-        <td><%= link_to 'Edit', edit_flood_prevention_path(flood_prevention) %></td>
-        <td><%= link_to 'Destroy', flood_prevention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% @flood_preventions.each do |fp| %>
+    <%= image_tag(fp.fp_pic.url(:medium)) %>
+    <h3><%= fp.fp_tag %></h3>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/flood_prevention/#{fp.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
 
 <br>
 

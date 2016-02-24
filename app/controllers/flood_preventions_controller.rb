@@ -28,7 +28,7 @@ class FloodPreventionsController < ApplicationController
 
     respond_to do |format|
       if @flood_prevention.save
-        format.html { redirect_to @flood_prevention, notice: 'Flood prevention was successfully created.' }
+        format.html { redirect_to '/flood_prevention', notice: 'Flood prevention was successfully created.' }
         format.json { render :show, status: :created, location: @flood_prevention }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class FloodPreventionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flood_prevention_params
-      params.fetch(:flood_prevention, {})
+      params.require(:flood_prevention).permit(:fp_pic, :fp_tag)
     end
 end

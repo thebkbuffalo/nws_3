@@ -1,4 +1,4 @@
-<%= form_for(@flood_prevention) do |f| %>
+<%= form_for @flood_prevention, url: flood_preventions_path, html: {multipart: true} do |f| %>
   <% if @flood_prevention.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@flood_prevention.errors.count, "error") %> prohibited this flood_prevention from being saved:</h2>
@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :fp_pic %><br>
+    <%= f.file_field :fp_pic %>
+  </div>
+  <div class="field">
+    <%= f.label :fp_tag %><br>
+    <%= f.text_field :fp_tag %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
