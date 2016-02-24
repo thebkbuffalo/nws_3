@@ -28,7 +28,7 @@ class WaterTestingServicesController < ApplicationController
 
     respond_to do |format|
       if @water_testing_service.save
-        format.html { redirect_to @water_testing_service, notice: 'Water testing service was successfully created.' }
+        format.html { redirect_to '/water_testing_services', notice: 'Water testing service was successfully created.' }
         format.json { render :show, status: :created, location: @water_testing_service }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class WaterTestingServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def water_testing_service_params
-      params.fetch(:water_testing_service, {})
+      params.require(:water_testing_service).permit(:wts_pic, :wts_tag)
     end
 end

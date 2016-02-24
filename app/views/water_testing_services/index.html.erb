@@ -1,24 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Water Testing Services</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @water_testing_services.each do |water_testing_service| %>
-      <tr>
-        <td><%= link_to 'Show', water_testing_service %></td>
-        <td><%= link_to 'Edit', edit_water_testing_service_path(water_testing_service) %></td>
-        <td><%= link_to 'Destroy', water_testing_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @water_testing_services.each do |wts| %>
+  <div class="inline">
+    <%= image_tag(wts.wts_pic.url(:medium)) %>
+    <h4><%= wts.wts_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/water_testing_services/#{wts.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<% end %>
 
 <br>
 

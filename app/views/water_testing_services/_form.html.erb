@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :wts_pic %><br>
+    <%= f.file_field :wts_pic %>
+  </div>
+  <div class="field">
+    <%= f.label :wts_tag %><br>
+    <%= f.text_field :wts_tag %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

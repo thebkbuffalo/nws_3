@@ -2,13 +2,15 @@
 
 <h1>Listing Flood Preventions</h1>
 
-  <% @flood_preventions.each do |fp| %>
+<% @flood_preventions.each do |fp| %>
+  <div class="inline">
     <%= image_tag(fp.fp_pic.url(:medium)) %>
-    <h3><%= fp.fp_tag %></h3>
+    <h4><%= fp.fp_tag %></h4>
     <% if current_user %>
       <h4><%= link_to 'DELETE', "/flood_prevention/#{fp.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
     <% end %>
-  <% end %>
+  </div>
+<% end %>
 
 <br>
 
