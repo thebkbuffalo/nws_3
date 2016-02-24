@@ -1,0 +1,13 @@
+<%= form_for Jetpump.new, url: '/well_pumps/jetpumps', html: {multipart: true} do |f| %>
+  <div class="field">
+    <%= f.label :jp_pic %><br>
+    <%= f.file_field :jp_pic %>
+  </div>
+  <div class="field">
+    <%= f.label :jp_tag %><br>
+    <%= f.text_field :jp_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
