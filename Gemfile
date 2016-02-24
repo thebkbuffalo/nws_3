@@ -42,7 +42,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-turbolinks'
 
 # file uploader gem
-gem 'carrierwave', '~> 0.10.0'
+gem "paperclip"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
