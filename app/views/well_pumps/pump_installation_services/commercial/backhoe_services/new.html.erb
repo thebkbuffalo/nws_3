@@ -1,0 +1,14 @@
+<h1>Add a new backhoe</h1>
+<%= form_for BackhoeService.new, url: '/well_pumps/pump_installation_services/commercial/backhoe_services', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :bh_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :bh_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,14 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225202407) do
+ActiveRecord::Schema.define(version: 20160225215522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "backhoe_services", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "bh_pic_file_name"
+    t.string   "bh_pic_content_type"
+    t.integer  "bh_pic_file_size"
+    t.datetime "bh_pic_updated_at"
+    t.string   "bh_tag"
   end
 
   create_table "basement_ros", force: :cascade do |t|
@@ -55,8 +60,13 @@ ActiveRecord::Schema.define(version: 20160225202407) do
   end
 
   create_table "crane_services", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "crane_pic_file_name"
+    t.string   "crane_pic_content_type"
+    t.integer  "crane_pic_file_size"
+    t.datetime "crane_pic_updated_at"
+    t.string   "crane_tag"
   end
 
   create_table "customrepairs", force: :cascade do |t|
