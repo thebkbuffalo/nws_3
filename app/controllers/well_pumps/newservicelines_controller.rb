@@ -17,7 +17,6 @@ class WellPumps::NewservicelinesController < ApplicationController
 
   def create
     @newserviceline = Newserviceline.new(newservicelines_params)
-    binding.pry
     respond_to do |format|
       if @newserviceline.save
         format.html { redirect_to well_pumps_newservicelines_url, notice: 'New Service Line picture added' }

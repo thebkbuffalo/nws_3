@@ -1,11 +1,11 @@
 <h1>Add a New Service Line picture</h1>
 <%= form_for Newserviceline.new, url: '/well_pumps/newservicelines', html: { multipart: true } do |f| %>
   <div class="field">
-    <%= f.label :nsl_pic %><br>
+    <%= f.label 'New Picture' %><br>
     <%= f.file_field :nsl_pic %>
   </div>
   <div class="field">
-    <%= f.label :nsl_tag %><br>
+    <%= f.label 'New Picture Tag' %><br>
     <%= f.text_field :nsl_tag %>
   </div>
   <div class="actions">

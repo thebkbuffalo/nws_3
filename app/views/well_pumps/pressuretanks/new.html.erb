@@ -1,11 +1,11 @@
 <h1>Add A New Pressure Tank Picture</h1>
 <%= form_for Pressuretank.new, url: '/well_pumps/pressuretanks', html: { multipart: true } do |f| %>
   <div class="field">
-    <%= f.label :pt_pic %><br>
+    <%= f.label 'New Picture' %><br>
     <%= f.file_field :pt_pic %>
   </div>
   <div class="field">
-    <%= f.label :pt_tag %><br>
+    <%= f.label 'New Tag' %><br>
     <%= f.text_field :pt_tag %>
   </div>
   <div class="actions">

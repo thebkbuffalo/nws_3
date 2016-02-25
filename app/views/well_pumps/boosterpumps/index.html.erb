@@ -9,4 +9,6 @@
   </div>
 <% end %>
 <br>
-<%= link_to 'New Booster Pump Picture', new_well_pumps_boosterpump_path %>
+<% if current_user %>
+  <%= link_to 'New Booster Pump Picture', new_well_pumps_boosterpump_path %>
+<% end %>

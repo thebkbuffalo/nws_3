@@ -1,1 +1,14 @@
 <h1>Custom Repairs</h1>
+<% @customrepairs.each do |cr| %>
+  <div class="inline">
+    <%= image_tag(cr.cr_pic.url(:medium)) %>
+    <h4><%= cr.cr_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/well_pumps/customrepairs/#{cr.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'New Custom Repair Picture', new_well_pumps_customrepair_path %>
+<% end %>
