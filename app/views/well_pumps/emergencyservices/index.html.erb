@@ -1,1 +1,14 @@
 <h1>emergency services</h1>
+<% @emergencyservices.each do |es| %>
+  <div class="inline">
+    <%= image_tag(es.es_pic.url(:medium)) %>
+    <h4><%= es.es_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/well_pumps/emergencyservices/#{es.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'New Emergency Service Picture', new_well_pumps_emergencyservice_path %>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>New Emergency Service Picture</h1>
+<%= form_for Emergencyservice.new, url: '/well_pumps/emergencyservices', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :es_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :es_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
