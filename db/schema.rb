@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225063334) do
+ActiveRecord::Schema.define(version: 20160225202407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,8 +120,13 @@ ActiveRecord::Schema.define(version: 20160225063334) do
   end
 
   create_table "pumps_tanks_boosters", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "ptb_pic_file_name"
+    t.string   "ptb_pic_content_type"
+    t.integer  "ptb_pic_file_size"
+    t.datetime "ptb_pic_updated_at"
+    t.string   "ptb_tag"
   end
 
   create_table "undersink_ros", force: :cascade do |t|

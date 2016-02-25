@@ -1,1 +1,14 @@
 <h1>Pumps Tanks &amp; Boosters</h1>
+<% @pumpstanksboosters.each do |ptb| %>
+  <div class="inline">
+    <%= image_tag(ptb.ptb_pic.url(:medium)) %>
+    <h4><%= ptb.ptb_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/well_pumps/pump_installation_services/commercial/pumps_tanks_boosters/#{ptb.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'New Pumps Tanks & Booster Picture', '/well_pumps/pump_installation_services/commercial/pumps_tanks_boosters/new' %>
+<% end %>
