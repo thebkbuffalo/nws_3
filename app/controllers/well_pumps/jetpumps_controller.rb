@@ -17,7 +17,7 @@ class WellPumps::JetpumpsController < ApplicationController
 
     respond_to do |format|
       if @jetpump.save
-        format.html { redirect_to '/well_pumps/jetpumps', notice: 'Jetpump pictured added' }
+        format.html { redirect_to well_pumps_jetpumps_url, notice: 'Jetpump picture added' }
       else
         format.html { render :new }
       end

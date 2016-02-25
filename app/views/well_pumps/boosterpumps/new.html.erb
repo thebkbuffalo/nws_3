@@ -1,0 +1,14 @@
+<h1>Add A New Booster Pump Picture</h1>
+<%= form_for Boosterpump.new, url: '/well_pumps/boosterpumps', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label :bp_pic %><br>
+    <%= f.file_field :bp_pic %>
+  </div>
+  <div class="field">
+    <%= f.label :bp_tag %><br>
+    <%= f.text_field :bp_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
