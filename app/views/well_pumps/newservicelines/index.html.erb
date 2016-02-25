@@ -1,1 +1,14 @@
 <h1>New Service Lines</h1>
+<% @newservicelines.each do |nsl| %>
+  <div class="inline">
+    <%= image_tag(nsl.nsl_pic.url(:medium)) %>
+    <h4><%= nsl.nsl_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/well_pumps/newservicelines/#{nsl.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'New Service Line Picture', new_well_pumps_newserviceline_path %>
+<% end %>
