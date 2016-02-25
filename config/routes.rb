@@ -80,6 +80,7 @@ Rails.application.routes.draw do
   # well pumps section
   get '/well_pumps' => 'well_pumps#index'
   namespace :well_pumps do
+    # think about redoing all this so that constant pressure systems is a resource and the other things are smaller less important...maybe some JS shit to hide and display? think bout it
     get 'constant_pressure_systems' => 'constant_pressure_systems#index'
     namespace :constant_pressure_systems do
       get '/penteks' => 'penteks#index'
