@@ -1,1 +1,12 @@
 <h1>Pressure Tanks</h1>
+<% @pressuretanks.each do |pt| %>
+  <div class="inline">
+    <%= image_tag(pt.pt_pic.url(:medium)) %>
+    <h4><%= pt.pt_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/well_pumps/pressuretanks/#{pt.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<%= link_to 'New Pressure Tank Picture', new_well_pumps_pressuretank_path %>
