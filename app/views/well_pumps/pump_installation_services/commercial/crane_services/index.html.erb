@@ -4,7 +4,7 @@
     <%= image_tag(cr.crane_pic.url(:medium)) %>
     <h4><%= cr.crane_tag %></h4>
     <% if current_user %>
-      <%= link_to 'DELETE', "/well_pumps/pump_installation_services/commercial/crane_services/#{cr.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <h4><%= link_to 'DELETE', "/well_pumps/pump_installation_services/commercial/crane_services/#{cr.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
     <% end %>
   </div>
 <% end %>

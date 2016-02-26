@@ -1,0 +1,28 @@
+<h1>Constant Pressure Systems</h1>
+<% @constantpressuresystems.each do |cps| %>
+  <div class="inline">
+    <%= image_tag(cps.cps_pic.url(:medium)) %>
+    <h4><%= cps.cps_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/well_pumps/constantpressuresystems/#{cps.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'New Constant Pressure System Picture', new_well_pumps_constantpressuresystem_path %>
+<% end %>
+<hr>
+<hr>
+<div id="constant_pressure_systems" class="constant_pressure_systems">
+  <div class="menu constant_pressure_systems_menu text-center">
+    <div class="menu_inner constant_pressure_systems_menu_inner">
+      <ul class="text-justify menu_ul">
+        <li><a href="#"><div class="small_circle inline"></div><h4>Pentek Intellidrive</h4></a></li>
+        <li><a href="#"><div class="small_circle inline"></div><h4>Goulds Aqavar</h4></a></li>
+        <li><a href="#"><div class="small_circle inline"></div><h4>Franklin Subdrive</h4></a></li>
+        <li><a href="#"><div class="small_circle inline"></div><h4>Other Brands</h4></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

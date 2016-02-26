@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225215522) do
+ActiveRecord::Schema.define(version: 20160226051159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20160225215522) do
   create_table "constant_pressure_systems", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "constantpressuresystems", force: :cascade do |t|
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "cps_pic_file_name"
+    t.string   "cps_pic_content_type"
+    t.integer  "cps_pic_file_size"
+    t.datetime "cps_pic_updated_at"
+    t.string   "cps_tag"
   end
 
   create_table "conventional_well_pumps", force: :cascade do |t|

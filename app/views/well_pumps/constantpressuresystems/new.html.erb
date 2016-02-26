@@ -1,0 +1,14 @@
+<h1>add a new constant pressure system picture</h1>
+<%= form_for Constantpressuresystem.new, url: '/well_pumps/constantpressuresystems', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :cps_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :cps_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
