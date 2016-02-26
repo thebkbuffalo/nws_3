@@ -1,1 +1,14 @@
 <h1>Conventional Well Pumps</h1>
+<% @convetionalwellpumps.each do |cwp| %>
+  <div class="inline">
+    <%= image_tag(cwp.cwp_pic.url(:medium)) %>
+    <h4><%= cwp.cwp_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/well_pumps/conventional_well_pumps/#{cwp.id}", method: :delete, data: { confirm: ' are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'Add a new Conventional Well Pump picture', new_well_pumps_conventional_well_pump_path %>
+<% end %>

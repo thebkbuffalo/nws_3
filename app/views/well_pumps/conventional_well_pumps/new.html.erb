@@ -1,0 +1,14 @@
+<h1>Add a new pic to Conventional Well Pumps</h1>
+<%= form_for ConventionalWellPump.new, url: '/well_pumps/conventional_well_pumps', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :cwp_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :cwp_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
