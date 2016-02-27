@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       get 'reverse_osmosis' => 'reverse_osmosis#index'
     end
     namespace :drinking_water do
+      # TODO TURN ALL OF THESE ROUTES INTO THINGS THAT DO THINGS DINGUS!  
       # get '/filtration_systems' => 'filtration_systems#index'
       resources :filtration_systems
       # get '/faucet_selections' => 'faucet_selections#index'
