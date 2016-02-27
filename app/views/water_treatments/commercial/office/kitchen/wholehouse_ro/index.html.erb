@@ -1,1 +1,14 @@
 <h1>Whole House RO</h1>
+<% @wholehouses.each do |wh| %>
+  <div class="inline">
+    <%= image_tag(wh.wh_ro_pic.url(:medium)) %>
+    <h4><%= wh.wh_ro_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/water_treatments/commercial/office/kitchen/wholehouse_ro/#{wh.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'Add a new Whole House picture', '/water_treatments/commercial/office/kitchen/wholehouse_ro/new' %>
+<% end %>

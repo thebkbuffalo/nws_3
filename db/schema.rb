@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227000329) do
+ActiveRecord::Schema.define(version: 20160227001528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -188,8 +188,13 @@ ActiveRecord::Schema.define(version: 20160227000329) do
   end
 
   create_table "wholehouse_ros", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "wh_ro_pic_file_name"
+    t.string   "wh_ro_pic_content_type"
+    t.integer  "wh_ro_pic_file_size"
+    t.datetime "wh_ro_pic_updated_at"
+    t.string   "wh_ro_tag"
   end
 
 end
