@@ -1,0 +1,14 @@
+<h1>Add a new Water Cooler Picture</h1>
+<%= form_for WaterCooler.new, url: '/water_treatments/commercial/office/water_coolers', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :wc_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :wc_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

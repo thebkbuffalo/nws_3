@@ -48,9 +48,12 @@ Rails.application.routes.draw do
       get 'reverse_osmosis' => 'reverse_osmosis#index'
     end
     namespace :drinking_water do
-      get '/filtration_systems' => 'filtration_systems#index'
-      get '/faucet_selections' => 'faucet_selections#index'
-      get '/optional_items' => 'optional_items#index'
+      # get '/filtration_systems' => 'filtration_systems#index'
+      resources :filtration_systems
+      # get '/faucet_selections' => 'faucet_selections#index'
+      resources :faucet_selections
+      # get '/optional_items' => 'optional_items#index'
+      resources :optional_items
       get '/something_else' => 'something_else#index'
     end
     namespace :residential do
@@ -66,7 +69,8 @@ Rails.application.routes.draw do
       get '/govt_food' => 'govt_food#index'
       get '/office' => 'office#index'
       namespace :office do
-        get '/water_coolers' => 'water_coolers#index'
+        # get '/water_coolers' => 'water_coolers#index'
+        resources :water_coolers
         get '/kitchen' => 'kitchen#index'
         namespace :kitchen do
           resources :undersink_ro
