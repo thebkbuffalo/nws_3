@@ -1,0 +1,14 @@
+<h1>Add a new Under Sink Reverse Osmosis Picture</h1>
+<%= form_for UndersinkRo.new, url: '/water_treatments/commercial/office/kitchen/undersink_ro', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :us_ro_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :us_ro_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
