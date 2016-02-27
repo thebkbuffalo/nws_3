@@ -1,1 +1,14 @@
 <h1>Basement Reverse Osmosis</h1>
+<% @basements.each do |b| %>
+  <div class="inline">
+    <%= image_tag(b.b_ro_pic.url(:medium)) %>
+    <h4><%= b.b_ro_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/water_treatments/commercial/office/kitchen/basement_ro/#{b.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'Add a new Basement RO picture', '/water_treatments/commercial/office/kitchen/basement_ro/new' %>
+<% end %>

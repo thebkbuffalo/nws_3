@@ -1,0 +1,14 @@
+<h1>Add a new Basement RO Picture</h1>
+<%= form_for BasementRo.new, url: '/water_treatments/commercial/office/kitchen/basement_ro', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :b_ro_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :b_ro_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
