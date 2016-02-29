@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227014237) do
+ActiveRecord::Schema.define(version: 20160229213256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,16 @@ ActiveRecord::Schema.define(version: 20160227014237) do
     t.integer  "es_pic_file_size"
     t.datetime "es_pic_updated_at"
     t.string   "es_tag"
+  end
+
+  create_table "faucet_selections", force: :cascade do |t|
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "faucet_pic_file_name"
+    t.string   "faucet_pic_content_type"
+    t.integer  "faucet_pic_file_size"
+    t.datetime "faucet_pic_updated_at"
+    t.string   "faucet_tag"
   end
 
   create_table "flood_preventions", force: :cascade do |t|

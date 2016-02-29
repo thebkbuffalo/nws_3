@@ -1,5 +1,6 @@
 class WaterTreatments::Commercial::Office::WaterCoolersController < ApplicationController
   before_action :set_water_cooler, only: [:show, :edit, :update, :destroy]
+  
   def index
     @watercoolers = WaterCooler.all
   end
