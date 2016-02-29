@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229220023) do
+ActiveRecord::Schema.define(version: 20160229222538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,6 +157,16 @@ ActiveRecord::Schema.define(version: 20160229220023) do
     t.integer  "nsl_pic_file_size"
     t.datetime "nsl_pic_updated_at"
     t.string   "nsl_tag"
+  end
+
+  create_table "optional_items", force: :cascade do |t|
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "option_pic_file_name"
+    t.string   "option_pic_content_type"
+    t.integer  "option_pic_file_size"
+    t.datetime "option_pic_updated_at"
+    t.string   "option_tag"
   end
 
   create_table "pressuretanks", force: :cascade do |t|
