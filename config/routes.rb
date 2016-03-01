@@ -42,7 +42,8 @@ Rails.application.routes.draw do
       resources :iron_sulfur
       # get 'birm' => 'birm#index'
       resources :birm
-      get 'multimedia' => 'multimedia#index'
+      # get 'multimedia' => 'multimedia#index'
+      resources :multimedia
       get 'sediment_control' => 'sediment_control#index'
       get 'kx_pro' => 'kx_pro#index'
       get 'ozone' => 'ozone#index'
