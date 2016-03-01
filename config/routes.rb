@@ -40,7 +40,8 @@ Rails.application.routes.draw do
       resources :water_conditioner
       # get 'iron_sulfur' => 'iron_sulfur#index'
       resources :iron_sulfur
-      get 'birm' => 'birm#index'
+      # get 'birm' => 'birm#index'
+      resources :birm
       get 'multimedia' => 'multimedia#index'
       get 'sediment_control' => 'sediment_control#index'
       get 'kx_pro' => 'kx_pro#index'
