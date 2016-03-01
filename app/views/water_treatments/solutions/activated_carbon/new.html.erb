@@ -1,0 +1,14 @@
+<h1>add a new photo</h1>
+<%= form_for ActivatedCarbon.new, url: '/water_treatments/solutions/activated_carbon', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :ac_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :ac_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

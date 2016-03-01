@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301065818) do
+ActiveRecord::Schema.define(version: 20160301073000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20160301065818) do
     t.integer  "acid_pic_file_size"
     t.datetime "acid_pic_updated_at"
     t.string   "acid_tag"
+  end
+
+  create_table "activated_carbons", force: :cascade do |t|
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "ac_pic_file_name"
+    t.string   "ac_pic_content_type"
+    t.integer  "ac_pic_file_size"
+    t.datetime "ac_pic_updated_at"
+    t.string   "ac_tag"
   end
 
   create_table "aerations", force: :cascade do |t|

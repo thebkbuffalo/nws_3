@@ -56,7 +56,8 @@ Rails.application.routes.draw do
       resources :aeration
       # get 'ultraviolet' => 'ultraviolet#index'
       resources :ultraviolet
-      get 'activated_carbon' => 'activated_carbon#index'
+      # get 'activated_carbon' => 'activated_carbon#index'
+      resources :activated_carbon
       get 'reverse_osmosis' => 'reverse_osmosis#index'
     end
     namespace :drinking_water do
