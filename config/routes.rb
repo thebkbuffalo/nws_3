@@ -50,7 +50,8 @@ Rails.application.routes.draw do
       resources :kx_pro
       # get 'ozone' => 'ozone#index'
       resources :ozone
-      get 'ion_exchange' => 'ion_exchange#index'
+      # get 'ion_exchange' => 'ion_exchange#index'
+      resources :ion_exchange
       get 'aeration' => 'aeration#index'
       get 'ultraviolet' => 'ultraviolet#index'
       get 'activated_carbon' => 'activated_carbon#index'
