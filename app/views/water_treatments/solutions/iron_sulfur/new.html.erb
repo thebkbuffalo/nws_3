@@ -1,0 +1,14 @@
+<h1>add a new picture</h1>
+<%= form_for IronSulfur.new, url: '/water_treatments/solutions/iron_sulfur', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :iron_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :iron_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
