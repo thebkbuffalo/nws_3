@@ -32,7 +32,8 @@ Rails.application.routes.draw do
       get 'chlorides' => 'chlorides#index'
     end
     namespace :solutions do
-      get 'acid_neutralizer' => 'acid_neutralizer#index'
+      # get 'acid_neutralizer' => 'acid_neutralizer#index'
+      resources :acid_neutralizer
       get 'chem_feeder' => 'chem_feeder#index'
       get 'water_conditioner' => 'water_conditioner#index'
       get 'iron_sulfur' => 'iron_sulfur#index'

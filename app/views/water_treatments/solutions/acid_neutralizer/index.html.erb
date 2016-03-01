@@ -1,1 +1,14 @@
 <h1>Acid Neutralizer</h1>
+<% @acids.each do |acid| %>
+  <div class="inline">
+    <%= image_tag(acid.acid_pic.url(:medium)) %>
+    <h4><%= acid.acid_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/water_treatments/solutions/acid_neutralizer/#{acid.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'Add a new picture', '/water_treatments/solutions/acid_neutralizer/new' %>
+<% end %>
