@@ -52,7 +52,8 @@ Rails.application.routes.draw do
       resources :ozone
       # get 'ion_exchange' => 'ion_exchange#index'
       resources :ion_exchange
-      get 'aeration' => 'aeration#index'
+      # get 'aeration' => 'aeration#index'
+      resources :aeration
       get 'ultraviolet' => 'ultraviolet#index'
       get 'activated_carbon' => 'activated_carbon#index'
       get 'reverse_osmosis' => 'reverse_osmosis#index'
