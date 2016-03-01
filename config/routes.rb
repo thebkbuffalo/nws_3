@@ -48,7 +48,8 @@ Rails.application.routes.draw do
       resources :sediment_control
       # get 'kx_pro' => 'kx_pro#index'
       resources :kx_pro
-      get 'ozone' => 'ozone#index'
+      # get 'ozone' => 'ozone#index'
+      resources :ozone
       get 'ion_exchange' => 'ion_exchange#index'
       get 'aeration' => 'aeration#index'
       get 'ultraviolet' => 'ultraviolet#index'
