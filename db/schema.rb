@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301073000) do
+ActiveRecord::Schema.define(version: 20160301074922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -287,6 +287,16 @@ ActiveRecord::Schema.define(version: 20160301073000) do
     t.integer  "ptb_pic_file_size"
     t.datetime "ptb_pic_updated_at"
     t.string   "ptb_tag"
+  end
+
+  create_table "reverse_osmoses", force: :cascade do |t|
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "ro_pic_file_name"
+    t.string   "ro_pic_content_type"
+    t.integer  "ro_pic_file_size"
+    t.datetime "ro_pic_updated_at"
+    t.string   "ro_tag"
   end
 
   create_table "sediment_controls", force: :cascade do |t|

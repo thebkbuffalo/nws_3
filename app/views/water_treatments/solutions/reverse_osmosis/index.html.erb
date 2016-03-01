@@ -1,1 +1,14 @@
 <h1>Reverse Osmosis</h1>
+<% @reverse_osmoses.each do |ro| %>
+  <div class="inline">
+    <%= image_tag(ro.ro_pic.url(:medium)) %>
+    <h4><%= ro.ro_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/water_treatments/solutions/reverse_osmosis/#{ro.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'Add a new photo', '/water_treatments/solutions/reverse_osmosis/new' %>
+<% end %>
