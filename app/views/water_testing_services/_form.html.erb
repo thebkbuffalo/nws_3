@@ -1,4 +1,4 @@
-<%= form_for(@water_testing_service) do |f| %>
+<%= form_for WaterTestingService.new, url: '/water_testing_services', html: { multipart: true } do |f| %>
   <% if @water_testing_service.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@water_testing_service.errors.count, "error") %> prohibited this water_testing_service from being saved:</h2>
