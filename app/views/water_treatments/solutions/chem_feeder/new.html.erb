@@ -1,0 +1,14 @@
+<h1>Add a picture</h1>
+<%= form_for ChemFeeder.new, url: '/water_treatments/solutions/chem_feeder', html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label 'New Picture' %><br>
+    <%= f.file_field :chem_pic %>
+  </div>
+  <div class="field">
+    <%= f.label 'New Tag' %><br>
+    <%= f.text_field :chem_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
