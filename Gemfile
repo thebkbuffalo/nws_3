@@ -45,7 +45,7 @@ gem 'jquery-turbolinks'
 gem "paperclip"
 
 # interaction with aws
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk-v1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
