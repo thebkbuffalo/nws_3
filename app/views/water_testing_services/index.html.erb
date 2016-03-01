@@ -12,5 +12,6 @@
 <% end %>
 
 <br>
-
-<%= link_to 'New Water testing service', new_water_testing_service_path %>
+<% if current_user %>
+  <%= link_to 'New Water testing service', new_water_testing_service_path %>
+<% end %>
