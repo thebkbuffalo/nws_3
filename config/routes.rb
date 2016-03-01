@@ -36,7 +36,8 @@ Rails.application.routes.draw do
       resources :acid_neutralizer
       # get 'chem_feeder' => 'chem_feeder#index'
       resources :chem_feeder
-      get 'water_conditioner' => 'water_conditioner#index'
+      # get 'water_conditioner' => 'water_conditioner#index'
+      resources :water_conditioner
       get 'iron_sulfur' => 'iron_sulfur#index'
       get 'birm' => 'birm#index'
       get 'multimedia' => 'multimedia#index'
