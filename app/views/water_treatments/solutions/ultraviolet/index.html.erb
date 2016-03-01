@@ -1,1 +1,14 @@
 <h1>Ultraviolet Disinfection</h1>
+<% @ultras.each do |ultra| %>
+  <div class="inline">
+    <%= image_tag(ultra.ultra_pic.url(:medium)) %>
+    <h4><%= ultra.ultra_tag %></h4>
+    <% if current_user %>
+      <h4><%= link_to 'DELETE', "/water_treatments/solutions/ultraviolet/#{ultra.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if current_user %>
+  <%= link_to 'Add a new photo', '/water_treatments/solutions/ultraviolet/new' %>
+<% end %>

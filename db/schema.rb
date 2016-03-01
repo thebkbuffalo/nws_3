@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301060953) do
+ActiveRecord::Schema.define(version: 20160301065818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -287,6 +287,16 @@ ActiveRecord::Schema.define(version: 20160301060953) do
     t.integer  "sediment_pic_file_size"
     t.datetime "sediment_pic_updated_at"
     t.string   "sediment_tag"
+  end
+
+  create_table "ultraviolets", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "ultra_pic_file_name"
+    t.string   "ultra_pic_content_type"
+    t.integer  "ultra_pic_file_size"
+    t.datetime "ultra_pic_updated_at"
+    t.string   "ultra_tag"
   end
 
   create_table "undersink_ros", force: :cascade do |t|
