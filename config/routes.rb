@@ -46,7 +46,8 @@ Rails.application.routes.draw do
       resources :multimedia
       # get 'sediment_control' => 'sediment_control#index'
       resources :sediment_control
-      get 'kx_pro' => 'kx_pro#index'
+      # get 'kx_pro' => 'kx_pro#index'
+      resources :kx_pro
       get 'ozone' => 'ozone#index'
       get 'ion_exchange' => 'ion_exchange#index'
       get 'aeration' => 'aeration#index'
