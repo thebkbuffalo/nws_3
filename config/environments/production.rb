@@ -86,7 +86,4 @@ Rails.application.configure do
     }
   }
 
-  config.paperclip_options = {
-    :s3_protocol => 'https'
-  }
 end
