@@ -80,7 +80,8 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     # :s3_host_name => 's3-us-west-2.amazonaws.com',
-    :region => 'us-west-1',
+    :region => 'us-west-2',
+    :s3 => { :region => 'us-east-1' },
     :s3_protocol => :https,
     :s3_credentials => {
       :bucket => 'nationalwaterservice',
