@@ -1,17 +1,19 @@
-<h1>Constant Pressure Systems</h1>
-<% @constantpressuresystems.each do |cps| %>
-  <div class="inline">
-    <%= image_tag(cps.cps_pic.url(:medium)) %>
-    <h4><%= cps.cps_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/well_pumps/constantpressuresystems/#{cps.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
+<div class="text-center">
+  <h1>Constant Pressure Systems</h1>
+  <% if current_user %>
+    <h2><%= link_to 'New Constant Pressure System Picture', new_well_pumps_constantpressuresystem_path %></h2>
+  <% end %>
+  <% @constantpressuresystems.each do |cps| %>
+    <div class="images">
+      <%= link_to image_tag(cps.cps_pic.url(:medium)), cps.cps_pic.url, title: cps.cps_tag %>
+      <h4><%= cps.cps_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/well_pumps/constantpressuresystems/#{cps.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 <br>
-<% if current_user %>
-  <%= link_to 'New Constant Pressure System Picture', new_well_pumps_constantpressuresystem_path %>
-<% end %>
 <hr>
 <hr>
 <div id="constant_pressure_systems" class="constant_pressure_systems">

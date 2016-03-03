@@ -1,14 +1,16 @@
-<h1>booster pumps</h1>
-<% @boosterpumps.each do |bp| %>
-  <div class="inline">
-    <%= image_tag(bp.bp_pic.url(:medium)) %>
-    <h4><%= bp.bp_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/well_pumps/boosterpumps/#{bp.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
+<div class="text-center">
+  <h1>booster pumps</h1>
+  <% if current_user %>
+    <h2><%= link_to 'New Booster Pump Picture', new_well_pumps_boosterpump_path %></h2>
+  <% end %>
+  <% @boosterpumps.each do |bp| %>
+    <div class="images">
+      <%= link_to image_tag(bp.bp_pic.url(:medium)), bp.bp_pic.url, title: bp.bp_tag %>
+      <h4><%= bp.bp_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/well_pumps/boosterpumps/#{bp.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 <br>
-<% if current_user %>
-  <%= link_to 'New Booster Pump Picture', new_well_pumps_boosterpump_path %>
-<% end %>
