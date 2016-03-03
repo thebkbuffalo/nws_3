@@ -1,6 +1,9 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 <div class="text-center">
   <h1>Listing Water Testing Services</h1>
+  <% if current_user %>
+    <h2><%= link_to 'add a new picture', new_water_testing_service_path %></h2>
+  <% end %>
   <% @water_testing_services.each do |wts| %>
     <div class="images">
       <%= link_to image_tag(wts.wts_pic.url(:medium)), wts.wts_pic.url, title: wts.wts_tag %>
@@ -12,6 +15,3 @@
   <% end %>
 </div>
 <br>
-<% if current_user %>
-  <%= link_to 'New Water testing service', new_water_testing_service_path %>
-<% end %>
