@@ -3,7 +3,7 @@
   <h1>Listing Water Testing Services</h1>
   <% @water_testing_services.each do |wts| %>
     <div class="images">
-      <%= image_tag(wts.wts_pic.url(:medium)) %>
+      <%= link_to image_tag(wts.wts_pic.url(:medium)), wts.wts_pic.url, title: wts.wts_tag %>
       <h4><%= wts.wts_tag %></h4>
       <% if current_user %>
         <h4><%= link_to 'DELETE', "/water_testing_services/#{wts.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
