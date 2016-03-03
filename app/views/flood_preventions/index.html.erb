@@ -1,18 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Flood Preventions</h1>
-
-<% @flood_preventions.each do |fp| %>
-  <div class="inline">
-    <%= image_tag(fp.fp_pic.url(:medium)) %>
-    <h4><%= fp.fp_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/flood_prevention/#{fp.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-
-<br>
-<% if current_user %>
-  <%= link_to 'New Flood prevention', new_flood_prevention_path %>
-<% end %>
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="text-center">
+  <h1>Flood Preventions</h1>
+  <% if current_user %>
+    <h2><%= link_to 'add a new picture', new_flood_prevention_path %><h2>
+  <% end %>
+  <% @flood_preventions.each do |fp| %>
+    <div class="images">
+      <%= link_to image_tag(fp.fp_pic.url(:medium)), fp.fp_pic.url, title: fp.fp_tag %>
+      <h4><%= fp.fp_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/flood_prevention/#{fp.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

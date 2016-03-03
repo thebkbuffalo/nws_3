@@ -83,8 +83,7 @@ a:hover {
 
 .images {
   display: inline-block;
-  text-align: center;
-  margin: 2.5em;
+  margin: 1em;
   height: 350px;
   width: 250px;
   vertical-align: top;
@@ -93,4 +92,5 @@ a:hover {
 .images img {
   width: 250px;
   height: 250px;
+  border-radius: 10px;
 }
