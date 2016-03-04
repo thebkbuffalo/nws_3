@@ -1,14 +1,15 @@
-<h1>faucet selections</h1>
-<% @faucets.each do |f| %>
-  <div class="inline">
-    <%= image_tag(f.faucet_pic.url(:medium)) %>
-    <h4><%= f.faucet_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/drinking_water/faucet_selections/#{f.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new photo', '/water_treatments/drinking_water/faucet_selections/new' %>
-<% end %>
+<div class="text-center">
+  <h1>faucet selections</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new photo', '/water_treatments/drinking_water/faucet_selections/new' %></h2>
+  <% end %>
+  <% @faucets.each do |f| %>
+    <div class="images">
+      <%= link_to image_tag(f.faucet_pic.url(:medium)), f.faucet_pic.url, title: f.faucet_tag %>
+      <h4><%= f.faucet_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/drinking_water/faucet_selections/#{f.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

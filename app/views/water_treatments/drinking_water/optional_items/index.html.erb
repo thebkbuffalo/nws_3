@@ -1,14 +1,15 @@
-<h1>optional items</h1>
-<% @options.each do |option| %>
-  <div class="inline">
-    <%= image_tag(option.option_pic.url(:medium)) %>
-    <h4><%= option.option_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/drinking_water/optional_items/#{option.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new picture', '/water_treatments/drinking_water/optional_items/new' %>
-<% end %>
+<div class="text-center">
+  <h1>optional items</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new picture', '/water_treatments/drinking_water/optional_items/new' %></h2>
+  <% end %>
+  <% @options.each do |option| %>
+    <div class="images">
+      <%= link_to image_tag(option.option_pic.url(:medium)), option.option_pic.url, title: option.option_tag %>
+      <h4><%= option.option_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/drinking_water/optional_items/#{option.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>
