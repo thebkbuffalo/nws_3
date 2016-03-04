@@ -1,14 +1,15 @@
-<h1>Crane Services</h1>
-<% @craneservices.each do |cr| %>
-  <div class="inline">
-    <%= image_tag(cr.crane_pic.url(:medium)) %>
-    <h4><%= cr.crane_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/well_pumps/pump_installation_services/commercial/crane_services/#{cr.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'New Crane Service Picture', '/well_pumps/pump_installation_services/commercial/crane_services/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Crane Services</h1>
+  <% if current_user %>
+    <h2><%= link_to 'add a new picture', '/well_pumps/pump_installation_services/commercial/crane_services/new' %></h2>
+  <% end %>
+  <% @craneservices.each do |cr| %>
+    <div class="images">
+      <%= link_to image_tag(cr.crane_pic.url(:medium)), cr.crane_pic.url, title: cr.crane_tag %>
+      <h4><%= cr.crane_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/well_pumps/pump_installation_services/commercial/crane_services/#{cr.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

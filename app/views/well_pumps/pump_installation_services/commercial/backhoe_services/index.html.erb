@@ -1,14 +1,16 @@
-<h1>BackHOE Services</h1>
-<% @backhoeservices.each do |bh| %>
-  <div class="inline">
-    <%= image_tag(bh.bh_pic.url(:medium)) %>
-    <h4><%= bh.bh_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/well_pumps/pump_installation_services/commercial/backhoe_services/#{bh.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
+<div class="text-center">
+  <h1>BackHOE Services</h1>
+  <% if current_user %>
+    <h2><%= link_to 'add a new picture', '/well_pumps/pump_installation_services/commercial/backhoe_services/new' %></h2>
+  <% end %>
+  <% @backhoeservices.each do |bh| %>
+    <div class="images">
+      <%= link_to image_tag(bh.bh_pic.url(:medium)), bh.bh_pic.url, title: bh.bh_tag %>
+      <h4><%= bh.bh_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/well_pumps/pump_installation_services/commercial/backhoe_services/#{bh.id}", method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 <br>
-<% if current_user %>
-  <%= link_to 'New Backhoe Service Picture', '/well_pumps/pump_installation_services/commercial/backhoe_services/new' %>
-<% end %>
