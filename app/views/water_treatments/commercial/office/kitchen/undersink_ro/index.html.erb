@@ -1,14 +1,15 @@
-<h1>Under Sink RO</h1>
-<% @undersinks.each do |us| %>
-  <div class="inline">
-    <%= image_tag(us.us_ro_pic.url(:medium)) %>
-    <h4><%= us.us_ro_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/commercial/office/kitchen/undersink_ro/#{us.id}", method: :delete, data: { confirm: 'Are you sure?' } %><h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new Under Sink Picture', '/water_treatments/commercial/office/kitchen/undersink_ro/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Under Sink RO</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new Under Sink Picture', '/water_treatments/commercial/office/kitchen/undersink_ro/new' %></h2>
+  <% end %>
+  <% @undersinks.each do |us| %>
+    <div class="images">
+      <%= link_to image_tag(us.us_ro_pic.url(:medium)), us.us_ro_pic.url, title: us.us_ro_tag %>
+      <h4><%= us.us_ro_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/commercial/office/kitchen/undersink_ro/#{us.id}", method: :delete, data: { confirm: 'Are you sure?' } %><h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

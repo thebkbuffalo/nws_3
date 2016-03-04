@@ -1,14 +1,15 @@
-<h1>Whole House RO</h1>
-<% @wholehouses.each do |wh| %>
-  <div class="inline">
-    <%= image_tag(wh.wh_ro_pic.url(:medium)) %>
-    <h4><%= wh.wh_ro_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/commercial/office/kitchen/wholehouse_ro/#{wh.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new Whole House picture', '/water_treatments/commercial/office/kitchen/wholehouse_ro/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Whole House RO</h1>
+  <% if current_user %>
+    <h2><%= link_to 'add a new picture', '/water_treatments/commercial/office/kitchen/wholehouse_ro/new' %></h2>
+  <% end %>
+  <% @wholehouses.each do |wh| %>
+    <div class="images">
+      <%= link_to image_tag(wh.wh_ro_pic.url(:medium)), wh.wh_ro_pic.url, title: wh.wh_ro_tag %>
+      <h4><%= wh.wh_ro_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/commercial/office/kitchen/wholehouse_ro/#{wh.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>
