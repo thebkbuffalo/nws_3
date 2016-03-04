@@ -1,14 +1,15 @@
-<h1>Ion Exchange</h1>
-<% @ions.each do |i| %>
-  <div class="inline">
-    <%= image_tag(i.io_pic.url(:medium)) %>
-    <h4><%= i.io_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/ion_exchange/#{i.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new photo', '/water_treatments/solutions/ion_exchange/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Ion Exchange</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new photo', '/water_treatments/solutions/ion_exchange/new' %></h2>
+  <% end %>
+  <% @ions.each do |i| %>
+    <div class="images">
+      <%= link_to image_tag(i.io_pic.url(:medium)), i.io_pic.url, title: i.io_tag %>
+      <h4><%= i.io_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/ion_exchange/#{i.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

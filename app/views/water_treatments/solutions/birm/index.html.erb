@@ -1,14 +1,15 @@
-<h1>Birm</h1>
-<% @birms.each do |b| %>
-  <div class="inline">
-    <%= image_tag(b.birm_pic.url(:medium)) %>
-    <h4><%= b.birm_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/birm/#{b.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new photo', '/water_treatments/solutions/birm/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Birm</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new photo', '/water_treatments/solutions/birm/new' %></h2>
+  <% end %>
+  <% @birms.each do |b| %>
+    <div class="images">
+      <%= link_to image_tag(b.birm_pic.url(:medium)), b.birm_pic.url, title: b.birm_tag %>
+      <h4><%= b.birm_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/birm/#{b.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

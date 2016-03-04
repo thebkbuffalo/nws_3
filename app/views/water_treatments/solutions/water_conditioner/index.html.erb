@@ -1,14 +1,15 @@
-<h1>Water Conditioner</h1>
-<% @water_conditioners.each do |wc| %>
-  <div class="inline">
-    <%= image_tag(wc.water_condition_pic.url(:medium)) %>
-    <h4><%= wc.water_condition_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/water_conditioner/#{wc.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new picture', '/water_treatments/solutions/water_conditioner/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Water Conditioner</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new picture', '/water_treatments/solutions/water_conditioner/new' %></h2>
+  <% end %>
+  <% @water_conditioners.each do |wc| %>
+    <div class="images">
+      <%= link_to image_tag(wc.water_condition_pic.url(:medium)), wc.water_condition_pic.url, title: wc.water_condition_tag %>
+      <h4><%= wc.water_condition_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/water_conditioner/#{wc.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

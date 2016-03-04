@@ -1,14 +1,15 @@
-<h1>Chem Feeder</h1>
-<% @chems.each do |chem| %>
-  <div class="inline">
-    <%= image_tag(chem.chem_pic.url(:medium)) %>
-    <h4><%= chem.chem_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/chem_feeder/#{chem.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new picture', '/water_treatments/solutions/chem_feeder/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Chem Feeder</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new picture', '/water_treatments/solutions/chem_feeder/new' %></h2>
+  <% end %>
+  <% @chems.each do |chem| %>
+    <div class="images">
+      <%= link_to image_tag(chem.chem_pic.url(:medium)), chem.chem_pic.url, title: chem.chem_tag %>
+      <h4><%= chem.chem_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/chem_feeder/#{chem.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

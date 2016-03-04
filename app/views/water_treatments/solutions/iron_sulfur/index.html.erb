@@ -1,14 +1,15 @@
-<h1>Iron Sulfur</h1>
-<% @irons.each do |iron| %>
-  <div class="inline">
-    <%= image_tag(iron.iron_pic.url(:medium)) %>
-    <h4><%= iron.iron_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/iron_sulfur/#{iron.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new picture', '/water_treatments/solutions/iron_sulfur/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Iron Sulfur</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new picture', '/water_treatments/solutions/iron_sulfur/new' %></h2>
+  <% end %>
+  <% @irons.each do |iron| %>
+    <div class="images">
+      <%= link_to image_tag(iron.iron_pic.url(:medium)), iron.iron_pic.url, title: iron.iron_tag %>
+      <h4><%= iron.iron_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/iron_sulfur/#{iron.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

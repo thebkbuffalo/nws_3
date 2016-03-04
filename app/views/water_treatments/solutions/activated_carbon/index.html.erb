@@ -1,14 +1,15 @@
-<h1>Activated Carbon</h1>
-<% @active_carbons.each do |ac| %>
-  <div class="inline">
-    <%= image_tag(ac.ac_pic.url(:medium)) %>
-    <h4><%= ac.ac_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/activated_carbon/#{ac.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new photo', '/water_treatments/solutions/activated_carbon/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Activated Carbon</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new photo', '/water_treatments/solutions/activated_carbon/new' %></h2>
+  <% end %>
+  <% @active_carbons.each do |ac| %>
+    <div class="images">
+      <%= link_to image_tag(ac.ac_pic.url(:medium)), ac.ac_pic.url, title: ac.ac_tag %>
+      <h4><%= ac.ac_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/activated_carbon/#{ac.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

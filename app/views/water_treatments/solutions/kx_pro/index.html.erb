@@ -1,14 +1,15 @@
-<h1>KX Pro</h1>
-<% @kx_pros.each do |kx| %>
-  <div class="inline">
-    <%= image_tag(kx.kx_pic.url(:medium)) %>
-    <h4><%= kx.kx_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/kx_pro/#{kx.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new picture', '/water_treatments/solutions/kx_pro/new' %>
-<% end %>
+<div class="text-center">
+  <h1>KX Pro</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new picture', '/water_treatments/solutions/kx_pro/new' %></h2>
+  <% end %>
+  <% @kx_pros.each do |kx| %>
+    <div class="images">
+      <%= link_to image_tag(kx.kx_pic.url(:medium)), kx.kx_pic.url, title: kx.kx_tag %>
+      <h4><%= kx.kx_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/kx_pro/#{kx.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

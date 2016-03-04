@@ -1,14 +1,15 @@
-<h1>Ozone</h1>
-<% @ozones.each do |o| %>
-  <div class="inline">
-    <%= image_tag(o.ozone_pic.url(:medium)) %>
-    <h4><%= o.ozone_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/ozone/#{o.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new picture', '/water_treatments/solutions/ozone/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Ozone</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new picture', '/water_treatments/solutions/ozone/new' %></h2>
+  <% end %>
+  <% @ozones.each do |o| %>
+    <div class="images">
+      <%= link_to image_tag(o.ozone_pic.url(:medium)), o.ozone_pic.url, title: o.ozone_tag %>
+      <h4><%= o.ozone_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/ozone/#{o.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

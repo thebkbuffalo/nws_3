@@ -1,14 +1,15 @@
-<h1>Sediment Control</h1>
-<% @sediments.each do |sed| %>
-  <div class="inline">
-    <%= image_tag(sed.sediment_pic.url(:medium)) %>
-    <h4><%= sed.sediment_tag %></h4>
-    <% if current_user %>
-      <h4><%= link_to 'DELETE', "/water_treatments/solutions/sediment_control/#{sed.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
-    <% end %>
-  </div>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'Add a new picture', '/water_treatments/solutions/sediment_control/new' %>
-<% end %>
+<div class="text-center">
+  <h1>Sediment Control</h1>
+  <% if current_user %>
+    <h2><%= link_to 'Add a new picture', '/water_treatments/solutions/sediment_control/new' %></h2>
+  <% end %>
+  <% @sediments.each do |sed| %>
+    <div class="images">
+      <%= link_to image_tag(sed.sediment_pic.url(:medium)), sed.sediment_pic.url, title: sed.sediment_tag %>
+      <h4><%= sed.sediment_tag %></h4>
+      <% if current_user %>
+        <h4><%= link_to 'DELETE', "/water_treatments/solutions/sediment_control/#{sed.id}", method: :delete, data: { confirm: 'are you sure?' } %></h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>
