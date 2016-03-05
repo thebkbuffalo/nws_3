@@ -94,3 +94,7 @@ a:hover {
   height: 250px;
   border-radius: 10px;
 }
+
+.backHome {
+  margin: 0 0 2em 2em;
+}
