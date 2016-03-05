@@ -98,3 +98,7 @@ a:hover {
 .backHome {
   margin: 0 0 2em 2em;
 }
+
+.btn:hover {
+  background: black!important;
+}
