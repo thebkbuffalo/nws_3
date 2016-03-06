@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+
+  # fuzzy search maybe? could also maybe use simple search and create a controller and model to funnel the routes thru?  Options...figure em out.
   def all_tables
     ActiveRecord::Base.connection.tables
   end
