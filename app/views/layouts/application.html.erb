@@ -30,8 +30,9 @@
   </div>
 
 
+  <%= all_tables %>
   <!-- maybe try getting all the tables instead? -->
-  <%= `rake routes`.split("\n").map{ |r| r.gsub(', ', ',').split(' ') } %>
+  <!-- <%= `rake routes`.split("\n").map{ |r| r.gsub(', ', ',').split(' ') } %> -->
 
 
 <%= yield %>

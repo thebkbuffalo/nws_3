@@ -11,5 +11,10 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to '/login' unless current_user
   end
-  
+
+  def all_tables
+    ActiveRecord::Base.connection.tables
+  end
+  helper_method :all_tables
+
 end
