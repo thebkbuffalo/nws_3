@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :videos
   root 'welcome#index'
 
   resources :water_testing_services
