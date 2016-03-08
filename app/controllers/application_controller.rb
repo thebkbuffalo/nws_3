@@ -19,4 +19,9 @@ class ApplicationController < ActionController::Base
   end
   helper_method :all_tables
 
+  def all_routes
+    `rake routes`
+  end
+  helper_method :all_routes
+
 end
