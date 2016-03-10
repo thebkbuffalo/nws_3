@@ -1,7 +1,9 @@
-<h1>Videos</h1>
-<% if current_user %>
-  <%= link_to 'New Video', new_video_path %>
-<% end %>
+<div class="text-center">
+  <h1>Videos</h1>
+  <% if current_user %>
+    <h4><%= link_to 'New Video', new_video_path %></h4>
+  <% end %>
+</div>
 <% @videos.each do |video| %>
   <div class="videos text-center">
     <h1><%= video.title %></h1>
