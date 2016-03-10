@@ -106,3 +106,7 @@ a:hover {
 .blogs {
   margin: 0 15em;
 }
+
+.login_form, .signup_form, .blog_form, .video_form {
+  margin: 0 11.5em;
+}

@@ -10,19 +10,22 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label "Title" %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label "URL" %>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label "Caption" %>
-    <%= f.text_field :caption %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="video_form col-xs-6">
+    <h1>New Video</h1>
+    <div class="field">
+      <%= f.label "Title" %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label "URL" %>
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label "Caption" %>
+      <%= f.text_field :caption, class: 'form-control' %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>

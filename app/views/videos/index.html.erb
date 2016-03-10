@@ -3,12 +3,15 @@
   <%= link_to 'New Video', new_video_path %>
 <% end %>
 <% @videos.each do |video| %>
-  <%= video.title %><br>
-  <%= embed(video.url) %><br>
-  <%= video.caption %>
-  <% if current_user %>
-    <%= link_to 'Show', video %>
-    <%= link_to 'Edit', edit_video_path(video) %>
-    <%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+  <div class="videos text-center">
+    <h1><%= video.title %></h1>
+    <%= embed(video.url) %><br>
+    <h3><%= video.caption %></h3>
+    <% if current_user %>
+      <!-- <%= link_to 'Show', video %>
+      <%= link_to 'Edit', edit_video_path(video) %> -->
+      <%= link_to 'Delete Video', video, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+  <hr style="margin:0 20em;">
 <% end %>
