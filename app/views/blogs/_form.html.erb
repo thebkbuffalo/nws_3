@@ -21,7 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :author %><br>
-    <%= f.text_field :author, value: current_user.name, class: 'form-control' %>
+    <% if !current_user.nil? %>
+      <%= f.text_field :author, value: current_user.name, class: 'form-control' %>
+    <% else %>
+      <%= f.text_field :author, class: 'form-control' %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
