@@ -9,7 +9,7 @@
     <div class="blogs text-center">
       <h1><%= blog.title %></h1>
       <h3 class="text-justify"><%= blog.content %></h3>
-      <h4>With Love: <%= blog.author %></h4>
+      <h4>Author: <%= simple_format(blog.author) %></h4>
       <% if current_user %>
         <!-- <%= link_to 'Show', blog %> -->
         <!-- <%= link_to 'Edit', edit_blog_path(blog) %> -->
