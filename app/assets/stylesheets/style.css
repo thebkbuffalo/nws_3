@@ -102,3 +102,7 @@ a:hover {
 .btn:hover {
   background: black!important;
 }
+
+.blogs {
+  margin: 0 15em;
+}
