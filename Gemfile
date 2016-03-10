@@ -47,6 +47,9 @@ gem "paperclip"
 # interaction with aws
 gem 'aws-sdk-v1'
 
+#html5 text editor gem
+gem 'ckeditor_rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
