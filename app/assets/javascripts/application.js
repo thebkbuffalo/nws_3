@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require baguette
-//= require ckeditor-jquery
+
 //= require turbolinks
 //= require_tree .

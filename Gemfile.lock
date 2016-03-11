@@ -45,8 +45,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.2)
-    ckeditor_rails (4.5.3)
-      railties (>= 3.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -179,7 +177,6 @@ DEPENDENCIES
   aws-sdk-v1
   bcrypt (~> 3.1.7)
   byebug
-  ckeditor_rails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
