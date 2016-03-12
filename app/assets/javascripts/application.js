@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require baguette
-
+//= require tinymce
 //= require turbolinks
 //= require_tree .
