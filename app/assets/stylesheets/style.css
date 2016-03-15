@@ -11,6 +11,14 @@ em {
   font-style: italic;
 }
 
+u {
+  text-decoration: underline;
+}
+
+s {
+  text-decoration: line-through;
+}
+
 ul {
   list-style-type: none;
 }
